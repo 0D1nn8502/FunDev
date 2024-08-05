@@ -53,25 +53,28 @@
 
     </div>
 
-    <div class="newz">
-
-      <% if (locals.articlez) {%> 
-
-            <ul> 
-
-              <% articlez.forEach(article=> { %> 
-
-                  <li> <% article.title %> </li>
-
-            </ul>
-
-           <% }) %>   
-           
-           <% } %>
-
-    </div>
-
   </div> 
+
+  <div class="newz">
+
+    <% if (locals.articlez) {%> 
+
+          <h3> The world </h3>
+
+          <ul> 
+
+            <% articlez.forEach(article=> { %> 
+
+                <li><p> <%= article.title %> : <a href="<%= article.url %>"> Read </a>  </p> </li>
+
+          </ul> 
+
+         <% }) %>   
+         
+         <% } %>
+
+  </div>
+
 
   <%- include ("partials/footer.ejs") %>
 

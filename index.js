@@ -32,7 +32,7 @@ app.get("/", async (req, res) => {
     
     // Get some news // 
 
-    var essentials = 'https://newsapi.org/v2/top-headlines?pageSize=30&sources=reuters&apiKey=' + apikey;  
+    var essentials = 'https://newsapi.org/v2/top-headlines?sources=reuters&apiKey=' + apikey;  
     var desi = 'https://newsapi.org/v2/everything?country=in&apiKey=' + apikey;  
 
 
@@ -42,19 +42,13 @@ app.get("/", async (req, res) => {
         const info = response.data.articles; 
 
         // creates a new array of articles from the recieved api array 
-        const articlez = info.map(article=> ({
 
-            title : info.title, 
-            url : info.url, 
-            description : info.description
-
-        }));
-
-        res.render("post.ejs", { taem: time_now, articlez: articlez });
+        res.render("post.ejs", { taem: time_now, articlez: info });
 
     } catch (error) {
         console.log(error); 
     }
+
 
 });
 
