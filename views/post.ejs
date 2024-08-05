@@ -1,0 +1,83 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+  <link rel="stylesheet" href="/styles/experiment.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <%- include ("partials/header.ejs") %>
+
+  <div class="timez">
+
+    <p> Current time : <%= taem %></p>
+
+  </div>
+
+  <div class="container mt-5">
+    <div class="container">
+
+      <div class="card" style="width:14rem; height:22rem;">
+
+        <div class="latest">
+          <img src="./assets/IMG_1758.jpg">
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title">Meghalaya</h5>
+          <p class="pt-sans-regular">Fat ke flower ho gayi thi</p>
+          <a href="#" class="btn btn-primary">Read</a>
+
+        </div>
+
+      </div>
+
+      
+      <div class="card" style="width: 14rem; height:22rem;">
+        <img src="./assets/IMG_1758.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Sikhi ki hondi</h5>
+          <p class="pt-sans-regular">Cycle ka pipe fat ke flower ho jayega</p>
+          <a href="#" class="btn btn-primary">Read</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="newz">
+
+      <% if (locals.articlez) {%> 
+
+            <ul> 
+
+              <% articlez.forEach(article=> { %> 
+
+                  <li> <% article.title %> </li>
+
+            </ul>
+
+           <% }) %>   
+           
+           <% } %>
+
+    </div>
+
+  </div> 
+
+  <%- include ("partials/footer.ejs") %>
+
+  <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="index.js" charset="utf-8"></script> -->
+
+</body>
+
+</html>

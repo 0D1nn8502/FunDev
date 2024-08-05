@@ -1,0 +1,15 @@
+
+.buttons {
+
+    display: flex; 
+    justify-content: center;
+    margin-top: 10px; 
+
+}
+
+.buttons button{
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+}
